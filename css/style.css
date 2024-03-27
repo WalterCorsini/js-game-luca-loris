@@ -15,7 +15,14 @@ body{
     height: 20px;
     background-color: greenyellow;
     position: absolute;
+    z-index: 9999;
     top: 0;
     left: 0;
+}
 
+.block{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
 }
