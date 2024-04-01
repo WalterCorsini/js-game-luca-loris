@@ -1,6 +1,8 @@
 // take tag with class .square
 const square = document.querySelector(".square");
 const blocks = [];
+let punteggio = 0;
+
 
   //creation random block
   for (let i = 0; i < 5; i++) {
@@ -71,6 +73,8 @@ document.addEventListener("keydown", function (e) {
       console.warn("hit");
       blocks[i].remove();
       blocks.splice(i, 1);
+      punteggio +=1;
+      document.getElementById("punteggio").innerHTML = punteggio;
       const blockElem = document.createElement("div");
       blockElem.classList = "block";
       // variable eight and widthrandom
