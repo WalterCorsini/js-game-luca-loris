@@ -10,6 +10,7 @@ body{
     background-color: green;
 }
 
+
 .square{
     width: 20px;
     height: 20px;
@@ -39,6 +40,15 @@ body{
     z-index: 9999;
     top: 0;
     left: 0;
+}
+
+.point{
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+
 }
 
 .container-punteggio{
