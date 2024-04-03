@@ -27,6 +27,17 @@ body{
     position: absolute;
 }
 
+.snack{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(251, 255, 0);
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
 .container-punteggio{
     text-align: center;
     margin-top: 10px;

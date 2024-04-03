@@ -3,15 +3,18 @@ const square = document.querySelector(".square");
 const blocks = [];
 let punteggio = 0;
 
+square.style.top = 20 +"px";
+square.style.left = 20 +"px";
 
+console.log(blocksCoords[0]);
   //creation random block
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < blocksCoords.length; i++) {
     // create new element
     const blockElem = document.createElement("div");
     blockElem.classList = "block";
     // variable eight and widthrandom
-    const topC = Math.floor(Math.random() * (280 / 20)) * 20;
-    const leftC = Math.floor(Math.random() * (280 / 20)) * 20;
+    const topC = blocksCoords[i][1];
+    const leftC = blocksCoords[i][0];
 
     // assign cordinates ad element
     blockElem.style.top = topC + "px";
@@ -71,23 +74,24 @@ document.addEventListener("keydown", function (e) {
       spriteSquare.top === blockCoord.top
     ) {
       console.warn("hit");
-      blocks[i].remove();
-      blocks.splice(i, 1);
+      square.remove();
+            // blocks[i].remove();
+      // blocks.splice(i, 1);
       punteggio +=1;
       document.getElementById("punteggio").innerHTML = punteggio;
-      const blockElem = document.createElement("div");
-      blockElem.classList = "block";
-      // variable eight and widthrandom
-      const topC = Math.floor(Math.random() * (280 / 20)) * 20;
-      const leftC = Math.floor(Math.random() * (280 / 20)) * 20;
+      // const blockElem = document.createElement("div");
+      // blockElem.classList = "block";
+      // // variable eight and widthrandom
+      // const topC = Math.floor(Math.random() * (280 / 20)) * 20;
+      // const leftC = Math.floor(Math.random() * (280 / 20)) * 20;
   
       // assign cordinates ad element
-      blockElem.style.top = topC + "px";
-      blockElem.style.left = leftC + "px";
+      // blockElem.style.top = topC + "px";
+      // blockElem.style.left = leftC + "px";
   
       // insert new element on body
-      document.querySelector(".container").append(blockElem);
-      blocks.push(blockElem);
+      // document.querySelector(".container").append(blockElem);
+      // blocks.push(blockElem);
     }
   }
 });
