@@ -32,6 +32,7 @@ for (let x = 8; x < containerElem.offsetWidth; x += 20) {
   for (let y = 8; y < containerElem.offsetHeight; y += 20) {
     // if coordinate point is the same of coordinate sprite, not create point
     if (x - 8 === square.offsetLeft && y - 8 === square.offsetTop) continue;
+
     let point = document.createElement("span");
     point.classList = "point";
     point.style.left = x + "px";
@@ -179,3 +180,23 @@ document.addEventListener("keydown", function (e) {
     }
   }
 });
+
+
+// elimina pallini sul muro
+for (let x = 0; x < blocks.length; x++) {
+  const ciccio = blocks[x].getBoundingClientRect();
+  for (let y = 0; y < blocks.length; y++) {
+    const riccio = arrayPoint[y].getBoundingClientRect();
+    
+    if(ciccio.left === riccio.left - 8 && ciccio.top === riccio.top - 8){
+             // remove point to video
+             arrayPoint[y].remove();
+             // remove point to array
+             arrayPoint.splice(y,1);
+    }
+    
+    
+  }
+}
+  console.log(blocks[0].getBoundingClientRect(),"muro");
+  console.log(arrayPoint[0].getBoundingClientRect(),"mangiare");
